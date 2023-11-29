@@ -47,10 +47,8 @@ export default class App extends Component {
 }
 
   // This function logs the user in
-  logMeIn = (e) => {
-    e.preventDefault();
-    const username = e.target.username.value;
-    this.setState({user: username})
+  logMeIn = (user) => {
+        this.setState({user: user})
   }
 
 
@@ -75,7 +73,7 @@ export default class App extends Component {
       
        <Routes>
         <Route path='/' element={<Home count={this.state.count} addToCount={this.addToCount} removeFromCount={this.removeFromCount} />} /> 
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<Login logMeIn = {this.logMeIn} />} />
         <Route path='/news' element={<News />}/>
         <Route path='/posts' element={<Feed />}/>
         <Route path='/posts:postId' element={<SinglePost />}/>

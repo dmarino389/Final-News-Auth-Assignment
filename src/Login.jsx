@@ -20,7 +20,7 @@ const Login = (props) => {
             // show success message
             // redirect to login page
             // store user to state
-            props.logMeIn(data.user.username)
+            props.logMeIn(data.user)
         }
     };
 
